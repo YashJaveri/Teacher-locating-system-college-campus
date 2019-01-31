@@ -24,13 +24,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
     private LocationManager locationManager=null;
 
-
+    
     private TextView locationText = null;
     DatabaseReference location;
     private static final String TAG = "Debug";
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         locationText = findViewById(R.id.txt_location);
         Button btnGetLocation = findViewById(R.id.btn_GetLocation);
         btnGetLocation.setOnClickListener(this);
+        FirebaseApp firebaseApp = FirebaseApp.initializeApp(this);
         location= FirebaseDatabase.getInstance().getReference("location");
 
         locationManager = (LocationManager)
