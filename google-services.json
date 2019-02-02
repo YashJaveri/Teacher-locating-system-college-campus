@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "712805000630",
+    "firebase_url": "https://teacher-locating-system-colleg.firebaseio.com",
+    "project_id": "teacher-locating-system-colleg",
+    "storage_bucket": "teacher-locating-system-colleg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712805000630:android:5db71a606f8832e9",
+        "android_client_info": {
+          "package_name": "com.imbuegen.hidenseek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712805000630-sl5o4ptnoe268i68ggdot95srhroj7ue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imbuegen.hidenseek",
+            "certificate_hash": "b4b3766874769c19aca42707b2ced0d2df505256"
+          }
+        },
+        {
+          "client_id": "712805000630-r4blor842jiupobthgomu8orojvnf3rv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOzA97XES_OPYOzxdtHAqjI4-pAF5m4l4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712805000630-r4blor842jiupobthgomu8orojvnf3rv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

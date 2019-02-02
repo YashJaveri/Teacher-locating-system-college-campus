@@ -1,5 +1,4 @@
 package com.imbuegen.hidenseek;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
@@ -25,12 +24,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity implements OnClickListener {
     private LocationManager locationManager=null;
 
-    private EditText editTxtClass = null;
+    
     private TextView locationText = null;
-
+    DatabaseReference location;
     private static final String TAG = "Debug";
 
     @Override
@@ -39,11 +42,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         setContentView(R.layout.activity_main);
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 
-        editTxtClass = findViewById(R.id.edit_class);
+
         locationText = findViewById(R.id.txt_location);
         Button btnGetLocation = findViewById(R.id.btn_GetLocation);
-
         btnGetLocation.setOnClickListener(this);
+        FirebaseApp firebaseApp = FirebaseApp.initializeApp(this);
+        location= FirebaseDatabase.getInstance().getReference("location");
 
         locationManager = (LocationManager)
                 getSystemService(Context.LOCATION_SERVICE);
@@ -52,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View v) {
-        Boolean flag = displayGpsStatus();
+        Boolean flag = true;
         String permission = "android.permission.ACCESS_FINE_LOCATION";
         int res = this.checkCallingOrSelfPermission(permission);
         if(res == PackageManager.PERMISSION_GRANTED) {
@@ -63,13 +67,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     locationManager.requestLocationUpdates(LocationManager
                             .GPS_PROVIDER, 5000, 10, locationListener);
 
+
             } else {
                 alertbox("Gps Status!!", "Your GPS is: OFF");
             }
         }
 
     }
-    private Boolean displayGpsStatus() {
+    /*private Boolean displayGpsStatus() {
         ContentResolver contentResolver = getBaseContext()
                 .getContentResolver();
         boolean gpsStatus = Settings.Secure
@@ -81,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         } else {
             return false;
         }
-    }
+    }*/
     protected void alertbox(String title, String mymessage) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Your Device's GPS is Disable")
@@ -124,6 +129,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
             String s = longitude+"\n"+latitude;
             locationText.setText(s);
+            String id =location.push().getKey();
+            Location1 location_push=new Location1(id,latitude,longitude);
+            location.child(id).setValue(location_push);
+
         }
 
         @Override
