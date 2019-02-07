@@ -35,4 +35,11 @@
         android:layout_marginStart="42dp"
         android:layout_marginBottom="295dp"
         android:text="Get Location" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        tools:srcCompat="@tools:sample/avatars" />
 </RelativeLayout>
