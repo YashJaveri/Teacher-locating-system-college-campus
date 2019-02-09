@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/Grey"
+    android:padding="20dp" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="WELCOME"
+        android:textColor="@color/mCustomWhite"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/Grey" />
+
+    <EditText
+        android:id="@+id/editTxt_email"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/transparent"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/mCustomWhite"
+        android:textColorHint="@color/LightGrey"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/editTxt_password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/transparent"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/mCustomWhite"
+        android:textColorHint="@color/LightGrey"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_round"
+        android:padding="3dp"
+        android:text="LogIn"
+        android:textColor="@color/mCustomWhite"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/already_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Not Registered"
+        android:textAlignment="center"
+        android:textColor="@color/mCustomWhite"
+        android:textSize="16sp" />
+
+</LinearLayout>

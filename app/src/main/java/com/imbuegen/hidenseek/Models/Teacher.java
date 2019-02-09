@@ -7,15 +7,15 @@ public class Teacher {
     private double lattitude;
     private double longitude;
     private double altitude;
-    private String email;// not sure (optional)
+    private String department;
 
-    public Teacher(String name, Boolean busy, double lattitude, double longitude, double altitude, String email) {
+    public Teacher(String name, Boolean busy, double lattitude, double longitude, double altitude, String department) {
         this.lattitude = lattitude;
         this.longitude = longitude;
         this.altitude = altitude;
         this.name = name;
         this.busy = busy;
-        this.email = email;
+        this.department = department;
     }
 
     public String getName() {
@@ -38,7 +38,5 @@ public class Teacher {
         return altitude;
     }
 
-    public String getEmail() {
-        return email;
-    }
+    public String getDepartment() { return department; }
 }

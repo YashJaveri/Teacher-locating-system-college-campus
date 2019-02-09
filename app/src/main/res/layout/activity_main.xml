@@ -8,31 +8,12 @@
 
     <TextView
         android:id="@+id/txt_location"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="180dp"
-        android:layout_marginBottom="114dp"
-        android:text="TextView" />
-
-    <Button
-        android:id="@+id/btn_push"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="253dp"
-        android:layout_marginBottom="291dp"
-        android:text="Push To Databse" />
-
-    <Button
-        android:id="@+id/btn_GetLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginBottom="295dp"
-        android:text="Get Location" />
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="113dp"
+        android:text="TextView"
+        android:textAlignment="center" />
 </RelativeLayout>
