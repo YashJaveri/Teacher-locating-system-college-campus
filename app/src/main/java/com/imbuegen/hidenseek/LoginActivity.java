@@ -15,4 +15,31 @@ public class LoginActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setElevation(0);
         setContentView(R.layout.login);
     }
+
+    private void init() {
+        //initialise stuff like views, lists etc
+    }
+
+    private void setListeners() {
+        //For LOGIN:
+        //call nullChecker()
+
+        //For NotRegistered:
+        //call notRegistered()
+    }
+
+    private void nullChecker(){
+        //read all edit texts Show toast accordingly
+        //call login()
+    }
+
+    private void login(String email, String password){
+        //Authenticate here
+        //redirect to teachers' screen(ill design later)
+    }
+
+
+    private void alreadyRegistered(){
+        //REPLACE SCREEN with register
+    }
 }
