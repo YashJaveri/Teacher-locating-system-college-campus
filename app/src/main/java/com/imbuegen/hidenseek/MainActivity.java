@@ -1,87 +1,70 @@
 package com.imbuegen.hidenseek;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.LocationProvider;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
-import com.google.android.gms.location.LocationServices;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.imbuegen.hidenseek.Services.TeacherBgService;
+import com.imbuegen.hidenseek.Teacherside.TeacherHomePage;
 
-
-import java.util.Locale;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     //TAG
-    Button teacher,student;
-    private static final String TAG = "Debug";
+    Button teacher, student;
+    FirebaseAuth auth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.chooser);
+        Objects.requireNonNull(getSupportActionBar()).setElevation(0);
         handlePermissions();
         init();
-        teacher=(Button)findViewById(R.id.Teacher);
-        student=(Button)findViewById(R.id.Student);
-        teacher.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View arg0) {
-
-
-                Intent myIntent = new Intent(MainActivity.this,
-                        LoginActivity.class);
-                startActivity(myIntent);
-                finish();
-                return;
-
-
-
-            }
-        });
-        student.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View arg0) {
-
-
-                Intent intent = new Intent(MainActivity.this,
-                        RegistrationActivity.class);
-                startActivity(intent);
-                finish();
-                return;
-
-
-            }
-        });
-
+        setOnCLicks();
     }
-
-
 
     private void init() {
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        teacher = findViewById(R.id.Teacher);
+        student = findViewById(R.id.Student);
     }
+
+    private void setOnCLicks() {
+        teacher.setOnClickListener(arg0 -> {
+            if (user == null) {
+                Intent myIntent = new Intent(MainActivity.this,
+                        RegistrationActivity.class);
+                startActivity(myIntent);
+                finish();
+            }
+            else{
+                Intent myIntent = new Intent(MainActivity.this,
+                        TeacherHomePage.class);
+                startActivity(myIntent);
+                finish();
+            }
+        });
+        student.setOnClickListener(arg0 -> {
+            Intent intent = new Intent(MainActivity.this,
+                    RegistrationActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+    }
+
 
     private void handlePermissions() {
         int locationRequestCode = 1000;

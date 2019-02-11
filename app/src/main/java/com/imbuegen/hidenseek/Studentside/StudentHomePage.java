@@ -1,4 +1,6 @@
 package com.imbuegen.hidenseek.Studentside;
 
-public class StudentHomePage {
+import android.support.v7.app.AppCompatActivity;
+
+public class StudentHomePage extends AppCompatActivity {
 }
