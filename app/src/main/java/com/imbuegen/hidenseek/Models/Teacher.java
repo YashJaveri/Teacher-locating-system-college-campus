@@ -4,13 +4,13 @@ public class Teacher {
 
     private String name;
     private Boolean busy;
-    private double lattitude;
-    private double longitude;
-    private double altitude;
+    private String latitude;
+    private String longitude;
+    private String altitude;
     private String department;
 
-    public Teacher(String name, Boolean busy, double lattitude, double longitude, double altitude, String department) {
-        this.lattitude = lattitude;
+    public Teacher(String name, Boolean busy, String latitude, String longitude, String altitude, String department) {
+        this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
         this.name = name;
@@ -26,15 +26,15 @@ public class Teacher {
         return busy;
     }
 
-    public double getLattitude() {
-        return lattitude;
+    public String getLatitude() {
+        return latitude;
     }
 
-    public double getLongitude() {
+    public String getLongitude() {
         return longitude;
     }
 
-    public double getAltitude() {
+    public String getAltitude() {
         return altitude;
     }
 

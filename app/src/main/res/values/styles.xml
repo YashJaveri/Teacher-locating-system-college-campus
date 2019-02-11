@@ -7,5 +7,7 @@
         <item name="colorPrimaryDark">@color/Grey</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <style name="Theme.NoPreviewWindow" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

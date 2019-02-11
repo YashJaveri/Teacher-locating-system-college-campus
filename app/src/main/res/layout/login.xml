@@ -65,7 +65,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/already_user"
+        android:id="@+id/not_registered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
