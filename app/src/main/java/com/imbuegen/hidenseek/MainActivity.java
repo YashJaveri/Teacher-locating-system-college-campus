@@ -30,21 +30,55 @@ import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.imbuegen.hidenseek.Services.TeacherBgService;
 
+
 import java.util.Locale;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     //TAG
+    Button teacher,student;
     private static final String TAG = "Debug";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Objects.requireNonNull(getSupportActionBar()).setElevation(0);
+
         setContentView(R.layout.chooser);
-        init();
         handlePermissions();
+        init();
+        teacher=(Button)findViewById(R.id.Teacher);
+        student=(Button)findViewById(R.id.Student);
+        teacher.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View arg0) {
+
+
+                Intent myIntent = new Intent(MainActivity.this,
+                        LoginActivity.class);
+                startActivity(myIntent);
+                finish();
+                return;
+
+
+
+            }
+        });
+        student.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View arg0) {
+
+
+                Intent intent = new Intent(MainActivity.this,
+                        RegistrationActivity.class);
+                startActivity(intent);
+                finish();
+                return;
+
+
+            }
+        });
+
     }
+
+
 
     private void init() {
     }
