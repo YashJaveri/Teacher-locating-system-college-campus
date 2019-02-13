@@ -8,15 +8,19 @@ public class Teacher {
     private String longitude;
     private String altitude;
     private String department;
+    private String number;
 
-    public Teacher(String name, Boolean busy, String latitude, String longitude, String altitude, String department) {
+    public Teacher(String name, Boolean busy, String latitude, String longitude, String altitude, String department, String number) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
         this.name = name;
         this.busy = busy;
         this.department = department;
+        this.number = number;
     }
+
+    public String getNumber() { return number; }
 
     public String getName() {
         return name;
