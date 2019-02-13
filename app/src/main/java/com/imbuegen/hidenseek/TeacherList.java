@@ -10,6 +10,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.imbuegen.hidenseek.Adapters.StudentAdapter;
 import com.imbuegen.hidenseek.Models.Teacher;
 
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class TeacherList extends AppCompatActivity {
                     Teacher teacher= teacherSnapshot.getValue(Teacher.class);
                     teacherList.add(teacher);
                 }
-                StudentHomePage studentHomePage=new StudentHomePage(TeacherList.this,teacherList);
+                StudentAdapter studentHomePage=new StudentAdapter(TeacherList.this,teacherList);
                 listView.setAdapter(studentHomePage);
             }
 
