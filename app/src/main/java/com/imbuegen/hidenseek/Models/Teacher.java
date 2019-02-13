@@ -1,46 +1,58 @@
 package com.imbuegen.hidenseek.Models;
 
-public class Teacher {
+import com.google.firebase.database.PropertyName;
+import java.io.Serializable;
 
+public class Teacher implements Serializable {
+    @PropertyName("Name")
     private String name;
-    private Boolean busy;
-    private String latitude;
-    private String longitude;
-    private String altitude;
+    @PropertyName("Busy")
+    private long busy;
+    @PropertyName("Latitude")
+    private Double latitude;
+    @PropertyName("Longitude")
+    private Double longitude;
+    @PropertyName("Altitude")
+    private Double altitude;
+    @PropertyName("Department")
     private String department;
+    @PropertyName("Number")
     private String number;
+    @PropertyName("email")
+    private String email;
 
-    public Teacher(String name, Boolean busy, String latitude, String longitude, String altitude, String department, String number) {
+    public Teacher(String name, String email, Double latitude, Double longitude, Double altitude, String department, String number, long busy) {
+        this.name = name;
+        this.email = email;
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
-        this.name = name;
-        this.busy = busy;
         this.department = department;
         this.number = number;
+        this.busy = busy;
+    }
+
+    public Teacher(){}
+
+    public String getName() { return name; }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
     }
 
     public String getNumber() { return number; }
 
-    public String getName() {
-        return name;
-    }
+    public long getBusy() { return busy; }
 
-    public Boolean getBusy() {
-        return busy;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public String getAltitude() {
+    public Double getAltitude() {
         return altitude;
     }
 
     public String getDepartment() { return department; }
+
+    public String getEmail() { return email; }
 }

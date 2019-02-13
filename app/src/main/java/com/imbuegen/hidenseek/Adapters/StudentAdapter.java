@@ -29,15 +29,15 @@ public class StudentAdapter extends ArrayAdapter<Teacher> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater =context.getLayoutInflater();
-        View listView=inflater.inflate(R.layout.list_view,null,true);
+        View listView=inflater.inflate(R.layout.list_view,parent,false);
 
         TextView latitude = listView.findViewById(R.id.latitude);
         TextView longitude = listView.findViewById(R.id.longitude);
         TextView name = listView.findViewById(R.id.name);
 
         Teacher teacher=teacherList.get(position);
-        latitude.setText(teacher.getLatitude());
-        longitude.setText(teacher.getLongitude());
+        latitude.setText(teacher.getLatitude().toString());
+        longitude.setText(teacher.getLongitude().toString());
         name.setText(teacher.getName());
 
         return listView;

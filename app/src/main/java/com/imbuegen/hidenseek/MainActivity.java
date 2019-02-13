@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.imbuegen.hidenseek.Services.TeacherBgService;
+import com.imbuegen.hidenseek.Studentside.StudentHomePage;
 import com.imbuegen.hidenseek.Teacherside.TeacherHomePage;
 
 import java.util.Objects;
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         });
         student.setOnClickListener(arg0 -> {
             Intent intent = new Intent(MainActivity.this,
-                    RegistrationActivity.class);
+                    StudentHomePage.class);
             startActivity(intent);
             finish();
         });

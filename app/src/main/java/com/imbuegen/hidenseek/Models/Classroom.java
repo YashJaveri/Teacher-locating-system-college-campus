@@ -1,20 +1,31 @@
 package com.imbuegen.hidenseek.Models;
 
-public class Classroom {
+import com.google.firebase.database.PropertyName;
 
+import java.io.Serializable;
+
+public class Classroom implements Serializable {
+
+    @PropertyName("Floor")
     private int floor;
+    @PropertyName("Name")
     private String name;
-    private double lattitude;
-    private double longitude;
-    private double altitude;
+    @PropertyName("Latitude")
+    private Double latitude;
+    @PropertyName("Longitude")
+    private Double longitude;
+    @PropertyName("Altitude")
+    private Double altitude;
 
-    public Classroom(int floor, double lattitude, double longitude, double altitude, String name) {
+    public Classroom(int floor, double latitude, double longitude, double altitude, String name) {
         this.floor = floor;
-        this.lattitude = lattitude;
+        this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
         this.name = name;
     }
+
+    public Classroom(){}
 
     public int getFloor() {
         return floor;
@@ -24,8 +35,8 @@ public class Classroom {
         return name;
     }
 
-    public double getLattitude() {
-        return lattitude;
+    public double getlatitude() {
+        return latitude;
     }
 
     public double getLongitude() {

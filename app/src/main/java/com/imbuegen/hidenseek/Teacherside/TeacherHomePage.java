@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 import com.imbuegen.hidenseek.R;
 import com.imbuegen.hidenseek.Services.TeacherBgService;
-
 import java.util.Objects;
 
 public class TeacherHomePage extends AppCompatActivity {
