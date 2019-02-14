@@ -17,8 +17,6 @@ public class StudentAdapter extends ArrayAdapter<Teacher> {
     private Activity context;
     private List<Teacher> teacherList;
 
-
-
     public StudentAdapter(Activity context, List<Teacher> teacherList){
         super(context,R.layout.list_view,teacherList);
         this.context=context;
@@ -31,14 +29,21 @@ public class StudentAdapter extends ArrayAdapter<Teacher> {
         LayoutInflater inflater =context.getLayoutInflater();
         View listView=inflater.inflate(R.layout.list_view,parent,false);
 
-        TextView latitude = listView.findViewById(R.id.latitude);
-        TextView longitude = listView.findViewById(R.id.longitude);
+        TextView classroom = listView.findViewById(R.id.txt_classroom);
+        TextView floor = listView.findViewById(R.id.txt_floor);
         TextView name = listView.findViewById(R.id.name);
+        TextView email = listView.findViewById(R.id.txt_email);
+        TextView dept = listView.findViewById(R.id.txt_dept);
+        TextView number = listView.findViewById(R.id.txt_number);
 
         Teacher teacher=teacherList.get(position);
-        latitude.setText(teacher.getLatitude().toString());
-        longitude.setText(teacher.getLongitude().toString());
+        classroom.setText(teacher.getCls().getName());
+        String str = "Floor: " + Integer.toString(teacher.getCls().getFloor());
+        floor.setText(str);
         name.setText(teacher.getName());
+        email.setText(teacher.getEmail());
+        number.setText(teacher.getNumber());
+        dept.setText(teacher.getDepartment());
 
         return listView;
 

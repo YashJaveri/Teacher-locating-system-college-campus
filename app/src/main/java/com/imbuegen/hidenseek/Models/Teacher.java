@@ -21,6 +21,8 @@ public class Teacher implements Serializable {
     @PropertyName("email")
     private String email;
 
+    private Classroom cls;
+
     public Teacher(String name, String email, Double latitude, Double longitude, Double altitude, String department, String number, long busy) {
         this.name = name;
         this.email = email;
@@ -55,4 +57,8 @@ public class Teacher implements Serializable {
     public String getDepartment() { return department; }
 
     public String getEmail() { return email; }
+
+    public void setCls(Classroom cls) { this.cls = cls; }
+
+    public Classroom getCls() { return cls; }
 }
