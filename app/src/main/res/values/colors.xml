@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#45A29E</color>
-    <color name="DarkGrey">#0B0C10</color>
-    <color name="Grey">#1F2833</color>
-    <color name="mCustomWhite">#F5F5F5</color>
-    <color name="LightGrey">#D3D3D3</color>
+    <color name="colorPrimary">#008081</color>
+    <color name="colorPrimaryDark">#008081</color>
+    <color name="colorAccent">#008081</color>
+    <color name="DarkGrey">#080808</color>
+    <color name="mRed">#d63031</color>
+    <color name="Grey">#FFFFFF</color>
+    <color name="mCustomWhite">#FFFFFF</color>
+    <color name="LightGrey">#BEBEBE</color>
     <color name="transparent">#00000000</color>
-
 </resources>

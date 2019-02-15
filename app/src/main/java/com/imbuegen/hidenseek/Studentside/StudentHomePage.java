@@ -37,13 +37,13 @@ public class StudentHomePage extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-        Objects.requireNonNull(getSupportActionBar()).setElevation(0);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         setContentView(R.layout.student_home);
+        Objects.requireNonNull(getSupportActionBar()).setElevation(0);
 
         init();
     }

@@ -1,24 +1,18 @@
 package com.imbuegen.hidenseek.Models;
 
 import com.google.firebase.database.PropertyName;
+
 import java.io.Serializable;
 
 public class Teacher implements Serializable {
-    @PropertyName("Name")
     private String name;
-    @PropertyName("Busy")
+    @PropertyName("busy")
     private long busy;
-    @PropertyName("Latitude")
     private Double latitude;
-    @PropertyName("Longitude")
     private Double longitude;
-    @PropertyName("Altitude")
     private Double altitude;
-    @PropertyName("Department")
     private String department;
-    @PropertyName("Number")
     private String number;
-    @PropertyName("email")
     private String email;
 
     private Classroom cls;
@@ -58,7 +52,15 @@ public class Teacher implements Serializable {
 
     public String getEmail() { return email; }
 
+    public Classroom getCls() { return cls; }
+
     public void setCls(Classroom cls) { this.cls = cls; }
 
-    public Classroom getCls() { return cls; }
+    public void setLatitude(Double latitude) { this.latitude = latitude; }
+
+    public void setBusy(long busy) { this.busy = busy; }
+
+    public void setLongitude(Double longitude) { this.longitude = longitude; }
+
+    public void setAltitude(Double altitude) { this.altitude = altitude; }
 }

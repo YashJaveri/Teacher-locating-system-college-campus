@@ -1,7 +1,6 @@
 package com.imbuegen.hidenseek.Models;
 
 import com.google.firebase.database.PropertyName;
-
 import java.io.Serializable;
 
 public class Classroom implements Serializable {

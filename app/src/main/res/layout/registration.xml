@@ -11,7 +11,7 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="WELCOME"
-        android:textColor="@color/mCustomWhite"
+        android:textColor="@color/DarkGrey"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -28,7 +28,7 @@
         android:padding="10dp"
         android:selectAllOnFocus="false"
         android:singleLine="true"
-        android:textColor="@color/mCustomWhite"
+        android:textColor="@color/DarkGrey"
         android:textColorHint="@color/LightGrey"
         android:textSize="15sp" />
 
@@ -44,7 +44,7 @@
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/mCustomWhite"
+        android:textColor="@color/DarkGrey"
         android:textColorHint="@color/LightGrey"
         android:textSize="15sp" />
 
@@ -65,7 +65,7 @@
         android:inputType="phone"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/mCustomWhite"
+        android:textColor="@color/DarkGrey"
         android:textColorHint="@color/LightGrey"
         android:textSize="15sp" />
 
@@ -86,7 +86,7 @@
         android:inputType="textCapWords"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/mCustomWhite"
+        android:textColor="@color/DarkGrey"
         android:textColorHint="@color/LightGrey"
         android:textSize="15sp" />
 
@@ -107,7 +107,7 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/mCustomWhite"
+        android:textColor="@color/DarkGrey"
         android:textColorHint="@color/LightGrey"
         android:textSize="15sp" />
 
@@ -128,7 +128,7 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/mCustomWhite"
+        android:textColor="@color/DarkGrey"
         android:textColorHint="@color/LightGrey"
         android:textSize="15sp" />
 
@@ -154,7 +154,7 @@
         android:padding="10dp"
         android:text="Already User?"
         android:textAlignment="center"
-        android:textColor="@color/mCustomWhite"
+        android:textColor="@color/DarkGrey"
         android:textSize="16sp" />
 
 </LinearLayout>

@@ -15,26 +15,45 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.imbuegen.hidenseek.Models.Teacher;
 
 public class TeacherBgService extends Service {
     int mstartMode;
     private LocationRequest mLocationRequest = LocationRequest.create();
     private LocationCallback mLocationCallback;
     private FusedLocationProviderClient mFusedLocationClient;
+    private FirebaseUser firebaseUser;
+    private FirebaseAuth auth;
+    private DatabaseReference databaseReference;
     private double latitude = 0.0, longitude = 0.0, altitude = 0.0;
+    private Teacher teacher;
     //TAG
     private static final String TAG = "Debug";
-    /** Called when the service is being created. */
+
     @Override
     public void onCreate() {
         Log.d(TAG, "onCreate: ");
     }
 
-    private void init() {
-        //location
-        Log.d(TAG, "init: ");
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        init(intent);
+        return mstartMode;
+    }
 
+    private void init(Intent intent) {
+        //firebase
+        auth = FirebaseAuth.getInstance();
+        firebaseUser = auth.getCurrentUser();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Teacher");
+        //Objects
+        teacher = (Teacher) intent.getSerializableExtra("Teacher");
+        //location
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         mLocationRequest.setInterval(5000);
         mLocationRequest.setFastestInterval(2000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -46,18 +65,23 @@ public class TeacherBgService extends Service {
                     return;
                 for (Location location : locationResult.getLocations()) {
                     if (location != null) {
-                        Log.d(TAG, "onLocationResult: "+location);
                         latitude = location.getLatitude();
                         longitude = location.getLongitude();
                         altitude = location.getAltitude();
-                        String s = "Latitude: "+latitude+"\nLongitude: "+longitude+ "\nAltitude: "+altitude;
-                        Log.d(TAG, s);
+                        //firebase push
+                        teacher.setLongitude(longitude);
+                        teacher.setLatitude(latitude);
+                        teacher.setAltitude(altitude);
+                        if (firebaseUser != null && databaseReference != null)
+                            databaseReference.child(firebaseUser.getUid()).setValue(teacher);
+                        //Log.d(TAG, "Latitude: " + latitude + "\nLongitude: " + longitude + "\nAltitude: " + altitude);
                     }
                 }
             }
         };
         initiateLocListener();
     }
+
     private void initiateLocListener() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
@@ -67,18 +91,12 @@ public class TeacherBgService extends Service {
                     null);
         }
     }
-    /** The service is starting, due to a call to startService() */
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        init();
-        return mstartMode;
-    }
 
-    /** Called when The service is no longer used and is being destroyed */
     @Override
     public void onDestroy() {
         //remove listener
     }
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
