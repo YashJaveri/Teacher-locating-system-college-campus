@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="3"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        android:textColor="@color/DarkGrey"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_classroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="TextView"
+        android:textColor="@color/DarkGrey"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:text="NA" />
+
+    <TextView
+        android:id="@+id/txt_floor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_classroom"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="4dp"
+        android:text="TextView"
+        android:textColor="@color/DarkGrey"
+        android:textSize="14sp"
+        tools:text="NA" />
+
+    <TextView
+        android:id="@+id/txt_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_dept"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:text="TextView"
+        android:textAlignment="textStart"
+        android:textColor="@color/DarkGrey"
+        android:textSize="14sp"
+        tools:text="NA" />
+
+    <ImageView
+        android:id="@+id/img_phone"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/name"
+        android:layout_toEndOf="@id/txt_dept"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="2dp"
+        android:src="@drawable/ic_phone_black_24dp"
+        />
+    <TextView
+        android:id="@+id/txt_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@id/img_phone"
+        android:text="TextView"
+        android:textAlignment="textStart"
+        android:textColor="@color/DarkGrey"
+        android:textSize="14sp"
+        tools:text="NA" />
+
+    <TextView
+        android:id="@+id/txt_dept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:text="TextView"
+        android:textAlignment="textStart"
+        android:textColor="@color/DarkGrey"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:text="NA" />
+
+    <TextView
+        android:id="@+id/txt_busy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_floor"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="6dp"
+        android:text="NA"
+        android:textAlignment="center"
+        android:textColor="@color/mRed"
+        android:textSize="12sp" />
+</RelativeLayout>
